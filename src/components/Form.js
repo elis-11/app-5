@@ -6,7 +6,7 @@ export const Form = () => {
                 <input
                  type="text"
                   className="form-control"
-                  placeholder="Write Name of search"
+                  placeholder="Enter the title"
                   />
             </div>
         </form>
