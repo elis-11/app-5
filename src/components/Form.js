@@ -18,7 +18,7 @@ export const Form = () => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form onSubmit={submitHandler}> 
       <div className="form-group">
         <input
           type="text"
