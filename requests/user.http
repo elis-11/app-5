@@ -1,0 +1,17 @@
+@API_URL=http://localhost:5000
+
+### home
+GET {{API_URL}}/
+
+### all users
+GET {{API_URL}}/user
+
+### create user
+POST {{API_URL}}/user
+Content-Type: application/json
+
+{
+    "name": "emili",
+    "email": "emili@gmail.com",
+    "password": "emili"
+}
