@@ -3,13 +3,15 @@ import bcrypt from "bcryptjs";
 import User from "../models/User.js";
 import jwt from "jsonwebtoken";
 import config from "../config.js";
+import { auth } from "../lib/auth.middleware.js";
 
 const userRouter = Router();
 
-userRouter.get("/", async (req, res, next) => {
-  // console.log("[ROUTE] Users ...");
+userRouter.get("/", auth, async (req, res, next) => {
+  console.log("[ROUTE] Users ..."); 
 
-  // console.log("Authenticated user:", req.user._id);
+  console.log("Authenticated user:", req.user);
+  console.log("Authenticated user:", req.user._id); // its 
   const usersAll = await User.find();
   res.json(usersAll);
 });

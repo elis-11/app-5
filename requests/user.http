@@ -1,17 +1,28 @@
-@API_URL=http://localhost:5000
+@API_URL = http://localhost:5000
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmQ5MTBkYzBlZjg1OTJjYjQ2OWVlNmMiLCJlbWFpbCI6ImVtaWxpQGdtYWlsLmNvbSIsImlhdCI6MTY1ODM5NjIyOCwiZXhwIjoxNjU4NDEwNjI4fQ.72ybl-neV-ClZuFyj-z7ZRGcaqt-bxpiRzOChbUGtPg
 
 ### home
 GET {{API_URL}}/
 
 ### all users
 GET {{API_URL}}/user
-
+Authorization: {{TOKEN}}
+  
 ### create user
 POST {{API_URL}}/user
 Content-Type: application/json
 
 {
     "name": "emili",
+    "email": "emili@gmail.com",
+    "password": "emili"
+}
+
+### login
+POST {{API_URL}}/user/login
+Content-Type: application/json
+
+{
     "email": "emili@gmail.com",
     "password": "emili"
 }
